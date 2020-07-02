@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="plugins/font-awesome-4.7.0/css/font-awesome.css"/>
+		<link rel="stylesheet" type="text/css" href="plugins/bootstrap-4.5.0/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="plugins/OverlayScrollbars/css/OverlayScrollbars.css"/>
+		<script src="plugins/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-3.5.1.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="plugins/layui/css/layui.css"/>
+		<script src="plugins/OverlayScrollbars/js/jquery.overlayScrollbars.min.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/hl-html-iframe-1.0.0.css"/>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div class="hl-container">
+			<div class="hl-sidebar">
+				<div class="hl-sidebar-header hide-div">
+						<div id="">
+							<img src="img/IMG_0370.JPG" width="40px" style="border-radius: 20px;"/>
+						</div>
+						<div id=""  style="margin-top: 20px;">
+							管理系统
+						</div>
+				</div>
+				<ul class="hide-div">
+					<li>
+						<div class="hl-menu-a" onclick="change(this)">
+							<a href="javascript:controllerUl()" >
+								<i class="fa fa-home"></i>
+								<span>测试</span>
+							</a>
+							<i class="fa fa-angle-left"></i>
+						</div>
+						<ul class="hl-menu-ul"  style="display: none;">
+							<li onclick="openiframe(this)" data-src="http://www.baidu.com"><i class="fa fa-train"></i><span>测试一</span></li>
+							<li onclick="openiframe(this)" data-src="http://www.qq.com"><i class="fa fa-train"></i><span>测试二</span></li>
+							<li onclick="openiframe(this)" data-src="http://v.qq.com"><i class="fa fa-train"></i><span>测试三</span></li>
+							<li onclick="openiframe(this)" data-src="https://www.cnblogs.com/"><i class="fa fa-train"></i><span>测试四</span></li>
+							<li onclick="openiframe(this)" data-src="https://www.csdn.com/"><i class="fa fa-train"></i><span>测试五</span></li>
+						</ul>
+					</li>
+					<li>
+						<div class="hl-menu-a" onclick="change(this)">
+							<a href="javascript:controllerUl()" >
+								<i class="fa fa-home"></i>
+								<span>测试</span>
+							</a>
+							<i class="fa fa-angle-left"></i>
+						</div>
+						<ul class="hl-menu-ul"  style="display: none;">
+							<li><i class="fa fa-train"></i><span>测试五</span></li>
+							<li><i class="fa fa-train"></i><span>测试五</span></li>
+							<li><i class="fa fa-train"></i><span>测试五</span></li>
+							<li><i class="fa fa-train"></i><span>测试五</span></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="hl-left">
+				<div class="hl-header">
+					<div><i class="fa fa-bars" style="color: #FFFFFF;font-size: 24px;" onclick="sidebarController()"></i></div>
+						<div class="hl-header-user">
+							<div id="">
+								<i class="fa fa-user-circle" style="color: #FFFFFF;font-size: 24px;"></i>
+							</div>
+							<div>
+								<span id="">
+									admin
+								</span>
+							</div>
+							<div id="">
+								<i class="fa fa-caret-down" style="color: #FFFFFF;font-size: 20px;"></i>
+							</div>
+						</div>
+				</div>
+				<div class="hl-iframe-header">
+					<div style="display: flex;flex-direction: row;background:white;border-bottom:1px solid #f6f6f6;">
+						<div id="hl-header-left" onclick="scrollToLeft()" style="border-right:1px solid #f6f6f6;height:35px;width:35px;display: flex;align-items: center;justify-content: center;"><i style="font-size:24px;color:#c2c2c2;" class="fa fa-angle-double-left" aria-hidden="true"></i> </div>
+						<div id='iframe-header' style='overflow-x:scroll;height:35px;'>
+							<ul id='iframe-ul-menu'>
+
+							</ul>
+						</div>
+						<div id="hl-header-right" onclick="scrollToRight()" style="border-left:1px solid #f6f6f6;height:35px;width:35px;display: flex;align-items: center;justify-content: center;"><i  style="font-size:24px;color:#c2c2c2;" class="fa fa-angle-double-right" aria-hidden="true"></i> </div>
+					</div>
+				</div>
+				<div class="hl-body" id="hl-body">
+						
+				</div>
+				<div class="hl-footer">
+					
+				</div>
+			</div>
+		</div>
+		<div id="hide-all"></div>
+	</body>
+	<script src="js/hl-html-iframe-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+	</script>
+</html>
