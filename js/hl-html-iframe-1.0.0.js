@@ -1,4 +1,4 @@
-window.onload=function(){
+		window.onload=function(){
 			var src = "https://www.baidu.com";
 			var text = "主页";
 			var a = document.getElementsByClassName("hl-left");
@@ -86,7 +86,7 @@ window.onload=function(){
 					liActive[i].className = "li-all";
 					
 				}
-				$("#iframe-ul-menu").append("<li  helei-id='"+src+"' class='li-active li-all' ><span onclick='liShowIframe(this)' >"+text+"</span><i onclick='closeIframe(this)' class='fa fa-times' aria-hidden='true'></i></li>");
+				$("#iframe-ul-menu").append("<li  helei-id='"+src+"' class='li-active li-all' onclick='liShowIframe(this)'><span>"+text+"</span><i onclick='closeIframe(this)' class='fa fa-times' aria-hidden='true'></i></li>");
 				$("#hl-body").append('<iframe scrolling="yes" class="myiframe" style="background-color:#fff;padding:10px;" id="myiframe" helei-id='+src+' frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen src="'+src+'" width=100%  height='+height+'>')
 			}else{
 				var fActive = document.getElementsByClassName("myiframe");
@@ -173,6 +173,7 @@ window.onload=function(){
 		}
 		function liShowIframe(that){
 			var src = that.parentNode.getAttribute("helei-id");
+			var src = that.getAttribute("helei-id");
 			var liAll = document.getElementsByClassName("li-all");
 			for(var i = 0; i < liAll.length; i ++){
 				if(liAll[i].getAttribute("helei-id")==src){
@@ -182,6 +183,7 @@ window.onload=function(){
 				}
 			}
 			var src = that.parentNode.getAttribute("helei-id");
+			var src = that.getAttribute("helei-id");
 			var fActive = document.getElementsByClassName("myiframe");
 			for(var i = 0; i < fActive.length; i ++){
 				if(fActive[i].getAttribute("helei-id")==src){
