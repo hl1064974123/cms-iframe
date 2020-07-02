@@ -3,7 +3,7 @@
 			var text = "主页";
 			var a = document.getElementsByClassName("hl-left");
 			var height = a[0].offsetHeight-155;
-			$("#iframe-ul-menu").append("<li  helei-id='"+src+"' class='li-active li-all' ><span onclick='liShowIframe(this)' >"+text+"</span></li>");
+			$("#iframe-ul-menu").append("<li  helei-id='"+src+"' onclick='liShowIframe(this)' class='li-active li-all' ><span >"+text+"</span></li>");
 			$("#hl-body").append('<iframe scrolling-y="yes" class="myiframe"  style="background-color:#fff;padding:10px;" id="myiframe" helei-id='+src+' frameborder="0" mozallowfullscreen webkitallowfullscreen allowfullscreen src="'+src+'" width=100%  height='+height+'>')
 		}
 		var instance = OverlayScrollbars(document.getElementById("iframe-header"), { 
@@ -21,7 +21,7 @@
 				initialize             : true 
 			},
 			overflowBehavior : {
-				x : "scroll",
+				x : "hidden",
 				y : "hidden"
 			},
 			scrollbars : {
@@ -30,7 +30,7 @@
 				autoHideDelay    : 500,
 				dragScrolling    : true,
 				clickScrolling   : false,
-				touchSupport     : true,
+				touchSupport     : false,
 				snapHandle       : false
 			},
 			textarea : {
@@ -54,6 +54,11 @@
 			}
 		});
 				
+		function changeScroll(){
+			var width = $("#iframe-ul-menu").width();
+			instance.scroll({ x : "+="+width+"px"  });
+		}
+		
 		function scrollToLeft(){
 			instance.scroll({ x : "-=100px"  });
 		}
@@ -114,8 +119,9 @@
 				 left.style.position="absolute";
 				 side.style.animation = "hidediv 0.5s forwards";
 				 $("#hide-all").hide();
-				 $(".hide-div").hide();
+				 //$(".hide-div").hide();
 			}
+			changeScroll();
 		}
 		
 		var side = document.getElementsByClassName("hl-sidebar")[0];	
@@ -126,31 +132,31 @@
 			 left.style.position="absolute";
 			 side.style.animation = "hidediv 0.5s forwards";
 			 $("#hide-all").hide();
-			 $(".hide-div").hide();
+//			 //$(".hide-div").hide();
 		})
 		function sidebarController(){
 			var side = document.getElementsByClassName("hl-sidebar")[0];
 			var left = document.getElementsByClassName("hl-left")[0];
 			if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) { //移动端
-				if(side.offsetWidth==0){
+				if($(".hl-sidebar").offset().left==-200){
 					side.style.position="fixed";
 					side.style.zIndex="20";
 					$("#hide-all").show();
 					left.style.position="fixed";
-					$(".hide-div").show()
-					side.style.animation = "showdiv 0s forwards";
+//					//$(".hide-div").show()
+					side.style.animation = "showdiv 0.5s forwards";
 				}else{
-					$(".hide-div").hide()
+					//$(".hide-div").hide()
 					side.style.animation = "hidediv 0.5s forwards";
 					left.style.animation = "showbody 0.5s forwards";
 				}
 			}else{
-				if(side.offsetWidth==0){
-					$(".hide-div").show()
-					side.style.animation = "showdiv 0s forwards";
-					left.style.animation = "hidebody 0s forwards";
+				if($(".hl-sidebar").offset().left==-200){
+					//$(".hide-div").show()
+					side.style.animation = "showdiv 0.5s forwards";
+					left.style.animation = "hidebody 0.5s forwards";
 				}else{
-					$(".hide-div").hide()
+					//$(".hide-div").hide()
 					side.style.animation = "hidediv 0.5s forwards";
 					left.style.animation = "showbody 0.5s forwards";
 				}
@@ -158,7 +164,6 @@
 		}
 		function change(that){
 			var ul =  that.parentNode.children[1];
-			console.log(ul.style.display);
 			if(ul.style.display=="none"){
 				that.children[1].style.transform="rotate(-90deg)";
 				that.children[1].style.transition="transform 0.5s";
