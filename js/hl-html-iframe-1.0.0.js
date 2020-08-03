@@ -164,6 +164,7 @@
 		}
 		function change(that){
 			var ul =  that.parentNode.children[1];
+<<<<<<< HEAD
 			var num = ($($(that.parentNode.children[1])).children().length)*40;
 			if($(that.parentNode.children[1]).css("height")=="0px"){
 				$(that.parentNode.children[1]).css("height",num+"px");
@@ -171,6 +172,9 @@
 				$(that.parentNode.children[1]).css("height","0px");
 			}
 			/*if(ul.style.display=="none"){
+=======
+			if(ul.style.display=="none"){
+>>>>>>> 6ea79edb80591cf55527319f803d62dc87bd52e2
 				that.children[1].style.transform="rotate(-90deg)";
 				that.children[1].style.transition="transform 0.1s";
 				ul.style.display="block";
