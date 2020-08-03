@@ -56,15 +56,15 @@
 				
 		function changeScroll(){
 			var width = $("#iframe-ul-menu").width();
-			instance.scroll({ x : "+="+width+"px"  });
+			instance.scroll({ x : "+="+width+"px"});
 		}
 		
 		function scrollToLeft(){
-			instance.scroll({ x : "-=100px"  });
+			instance.scroll({ x : "-=100px"});
 		}
 		
 		function scrollToRight(){
-			instance.scroll({ x : "+=100px"  });
+			instance.scroll({ x : "+=100px"});
 		}
 		
 		function openiframe(that){
