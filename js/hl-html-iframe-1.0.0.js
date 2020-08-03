@@ -164,14 +164,23 @@
 		}
 		function change(that){
 			var ul =  that.parentNode.children[1];
-			if(ul.style.display=="none"){
+			var num = ($($(that.parentNode.children[1])).children().length)*40;
+			if($(that.parentNode.children[1]).css("height")=="0px"){
+				$(that.parentNode.children[1]).css("height",num+"px");
+			}else{
+				$(that.parentNode.children[1]).css("height","0px");
+			}
+			/*if(ul.style.display=="none"){
 				that.children[1].style.transform="rotate(-90deg)";
-				that.children[1].style.transition="transform 0.5s";
+				that.children[1].style.transition="transform 0.1s";
 				ul.style.display="block";
+				// that.parentNode.children[1].style.height = "200px";
+				$(that.parentNode.children[1]).css("height","200px")
 			}else{
 				that.children[1].style.transform="rotate(0deg)";
+				that.parentNode.children[1].style.height = "0px";
 				ul.style.display="none";
-			}
+			}*/
 		}
 		function controllerUl(){
 			console.log("hahah");

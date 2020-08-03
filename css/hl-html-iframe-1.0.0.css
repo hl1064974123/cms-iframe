@@ -197,6 +197,13 @@ html,body{
 			.hl-menu-a span{
 				padding-left: 5px;
 			}
+			.hl-menu-ul{
+				width: auto;
+				height: 0px;
+				-webkit-transition:height 0.5s, -webkit-transform 0.5s; /* For Safari 3.1 to 6.0 */
+				transition: width 0.5s, height 0.5s, transform 0.5s;
+				background-color: rgba(0,0,0,0.4)
+			}
 			.hl-menu-ul span{
 				padding-left: 5px;
 			}
